@@ -1,0 +1,20 @@
+sudo: false
+language: node_js
+node_js:
+- stable
+env:
+  global:
+  - BUILD_TIMEOUT=10000
+install: npm install
+script: 
+  - npm run lint
+  - npm run test 
+  - npm run build
+before_deploy: 
+  - cd functions && npm install && npm install firebase-tools -g
+deploy:
+  skip_cleanup: true
+  provider: script
+  script: firebase deploy --token $FIREBASE_TOKEN
+  on:
+    branch: master

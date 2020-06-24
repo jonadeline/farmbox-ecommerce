@@ -1,0 +1,223 @@
+:root {
+	--uim-color: #315319
+}
+
+body {
+	margin: 0;
+	font-family: 'Muli', sans-serif;
+	font-size: 16px;
+	line-height: 1.5;
+	color: #13395e;
+	background-image:url(bg-app.jpg);
+	background-repeat: repeat;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	margin: 0 0 0.5em 0;
+	font-weight: 400;
+	line-height: 1.2;
+}
+
+h1 {
+	font-size: 2em;
+}
+
+a {
+	color: inherit;
+}
+
+code {
+	font-family: menlo, inconsolata, monospace;
+	font-size: calc(1em - 2px);
+	color: #555;
+	background-color: #f0f0f0;
+	padding: 0.2em 0.4em;
+	border-radius: 2px;
+}
+
+.container-fluid {
+	max-width: 1440px;
+}
+
+button:not(.day--label):not(.close):not(.reverse) {
+	background: #315319 !important;
+	color: #fff !important;
+}
+
+button.reverse {
+	background: #fff;
+	border:1px solid #4b7e27;
+	color: #4b7e27;
+}
+
+button:not(.day--label):not(.close):hover {
+	background: #4b7e27 !important;
+	color: #fff !important;
+}
+
+.bg { /* svelte-simple-modal overlay */
+	z-index:9998 !important
+}
+
+
+#checkoutForm label:not(.form-check-label){
+	font-size:1.2rem;
+}
+
+.form-check {
+	padding:0;
+}
+
+.form-check-label span{
+	font-size:1.1rem;
+}
+
+button .uil {
+	font-size: 1.5rem;
+}
+
+
+/* ====== CHECKOUT PAYMENT FORM ====== */
+
+#payment-form .icon-container.payment-method.show {
+	opacity: 1 !important;
+	transition: all 0.4s ease-out !important;
+	transform: translateY(-50%) rotateY(0deg) !important;
+}
+
+
+#payment-form .date-and-code > div:nth-child(1) {
+	width: 55.715%;
+}
+#payment-form .date-and-code > div:nth-child(2) {
+	width: 45.719%;
+}
+
+#payment-form .input-container {
+	position: relative;
+	display: flex;
+	height: 60px;
+}
+
+#payment-form .icon-container:last-child {
+	right: 0;
+}
+#payment-form .icon-container.payment-method {
+	right: 0;
+}
+
+#payment-form  .card-number-frame {
+	padding-left: 40px;
+}
+#payment-form  .expiry-date-frame {
+	padding-left: 40px;
+}
+#payment-form  .cvv-frame {
+	padding-left: 40px;
+}
+
+#payment-form  div + button {
+	margin-top: 8px;
+}
+
+#payment-form  .icon-container {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	display: flex;
+	justify-content: center;
+	width: 26px;
+	margin: 0 7px;
+}
+
+#payment-form .icon-container.payment-method {
+	transform: translateY(-50%) rotateY(90deg);
+	transition: opacity 0.15s ease-out;
+	opacity: 0;
+	top: 50%;
+}
+
+#payment-form .icon-container.payment-method img {
+	width: 100%;
+}
+
+[id$="-error"] {
+	display: none;
+}
+
+#payment-form .frame {
+	opacity: 0;
+}
+
+#payment-form .frame--activated {
+	opacity: 1;
+	border-radius: 3px;
+	border: 1px solid #ced4da;
+}
+
+#payment-form .frame--activated.frame--focus {
+	border-color: #80bdff;
+	box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
+}
+
+#payment-form .frame--activated.frame--invalid {
+	border: 1px solid #dc3545 !important;
+}
+
+#payment-form .frame--activated.frame--invalid.frame--focus {
+	border-color: #dc3545;
+	box-shadow: 0 0 0 0.2rem rgba(220,53,69,.25);
+}
+
+#payment-form .frame--activated.frame--valid {
+	border: 1px solid #28a745 !important;
+}
+
+#payment-form .frame--activated.frame--valid.frame--focus {
+	border-color: #28a745;
+	box-shadow: 0 0 0 0.2rem rgba(40,167,69,.25);
+}
+
+
+#payment-form  #pay-button {
+	width: 100%;
+}
+
+#pay-button:not(:disabled) {
+	cursor: pointer;
+}
+.token {
+	color: #dc3545;
+	font-family: monospace;
+}
+
+/**
+IE11-targeted optimisations
+*/
+_:-ms-fullscreen,
+:root .icon-container {
+	display: block;
+}
+
+_:-ms-fullscreen,
+:root .icon-container img {
+	top: 50%;
+	-ms-transform: translateY(-50%);
+	position: absolute;
+}
+
+_:-ms-fullscreen,
+#icon-card-number,
+_:-ms-fullscreen,
+#icon-expiry-date,
+_:-ms-fullscreen,
+#icon-cvv {
+	left: 7px;
+}
+
+#checkout-frames-card-number::-ms-clear {
+	display: none;
+}
+
+
+
